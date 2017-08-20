@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class SelectUserViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var userList: UITableView!
     
-    
+    var users : [User] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,15 +21,36 @@ class SelectUserViewController: UIViewController, UITableViewDelegate, UITableVi
         // Do any additional setup after loading the view.
         userList.delegate = self
         userList.dataSource = self
+        
+        // Accessing FireBase database, observe is what lets us pull the files from database
+        Database.database().reference().child("users").observe(DataEventType.childAdded, with: { (snapshot) in
+            print(snapshot)
+            
+            let user = User()
+            
+            // This line was a fuckig bitch to get. REMEMBER THIS ONE!
+            user.email = (snapshot.value! as! NSDictionary).object(forKey: "email") as! String
+            user.uid = snapshot.key
+            
+            self.users.append(user)
+            
+            self.userList.reloadData()
+        })
+        
     }
     
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = UITableViewCell()
+        let user = users[indexPath.row]
+        
+        cell.textLabel?.text = user.email
+        
+        return cell
     }
 
     override func didReceiveMemoryWarning() {

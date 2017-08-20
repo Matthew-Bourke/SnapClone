@@ -34,13 +34,16 @@ class SignInViewController: UIViewController {
                     // If there is an error, print the error.
                     if error != nil {
                         print("ERROR: \(String(describing: error))")
-                    // Otherwise, print confirmation message and segue to next VC
+                        // Otherwise, print confirmation message and segue to next VC
                     } else {
                         print("Created new user!")
+                        
+                        Database.database().reference().child("users").child(user!.uid).child("email").setValue(user!.email)
+                        
                         self.performSegue(withIdentifier: "signinSegue", sender: nil)
                     }
                 })
-            // If signin is successful, print confirmation message, and segue to next VC
+                // If signin is successful, print confirmation message, and segue to next VC
             } else {
                 
                 print("Sign in successful")
