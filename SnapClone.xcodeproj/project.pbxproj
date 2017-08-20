@@ -17,6 +17,9 @@
 		C92A24AC1F49652D00914984 /* SnapCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92A24AB1F49652D00914984 /* SnapCloneTests.swift */; };
 		C92A24B71F49652D00914984 /* SnapCloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92A24B61F49652D00914984 /* SnapCloneUITests.swift */; };
 		C92A24C51F49686300914984 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C92A24C41F49686300914984 /* GoogleService-Info.plist */; };
+		C92A24C71F4980FB00914984 /* SnapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92A24C61F4980FB00914984 /* SnapsViewController.swift */; };
+		C92A24C91F49837600914984 /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92A24C81F49837600914984 /* PictureViewController.swift */; };
+		C92A24CB1F499FDD00914984 /* SelectUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92A24CA1F499FDD00914984 /* SelectUserViewController.swift */; };
 		DB13D0602F8C5AE87097184F /* Pods_SnapClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1423052C11CB96A4471E144E /* Pods_SnapClone.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +62,9 @@
 		C92A24B61F49652D00914984 /* SnapCloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapCloneUITests.swift; sourceTree = "<group>"; };
 		C92A24B81F49652D00914984 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C92A24C41F49686300914984 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C92A24C61F4980FB00914984 /* SnapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapsViewController.swift; sourceTree = "<group>"; };
+		C92A24C81F49837600914984 /* PictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
+		C92A24CA1F499FDD00914984 /* SelectUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectUserViewController.swift; sourceTree = "<group>"; };
 		DE9B6562D9A4A8345ED64F7F /* Pods-SnapClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapClone.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnapClone/Pods-SnapClone.release.xcconfig"; sourceTree = "<group>"; };
 		E8AF95654B61DF1053F2E54B /* Pods-SnapCloneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapCloneTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnapCloneTests/Pods-SnapCloneTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,6 +147,9 @@
 			children = (
 				C92A24961F49652D00914984 /* AppDelegate.swift */,
 				C92A24981F49652D00914984 /* SignInViewController.swift */,
+				C92A24C61F4980FB00914984 /* SnapsViewController.swift */,
+				C92A24C81F49837600914984 /* PictureViewController.swift */,
+				C92A24CA1F499FDD00914984 /* SelectUserViewController.swift */,
 				C92A249A1F49652D00914984 /* Main.storyboard */,
 				C92A249D1F49652D00914984 /* Assets.xcassets */,
 				C92A249F1F49652D00914984 /* LaunchScreen.storyboard */,
@@ -345,12 +354,16 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SnapClone/Pods-SnapClone-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,7 +478,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C92A24991F49652D00914984 /* SignInViewController.swift in Sources */,
+				C92A24C91F49837600914984 /* PictureViewController.swift in Sources */,
+				C92A24CB1F499FDD00914984 /* SelectUserViewController.swift in Sources */,
 				C92A24971F49652D00914984 /* AppDelegate.swift in Sources */,
+				C92A24C71F4980FB00914984 /* SnapsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
