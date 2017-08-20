@@ -15,6 +15,10 @@ class SelectUserViewController: UIViewController, UITableViewDelegate, UITableVi
     
     var users : [User] = []
     
+    var imageURL = ""
+    var descrip = ""
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +28,7 @@ class SelectUserViewController: UIViewController, UITableViewDelegate, UITableVi
         
         // Accessing FireBase database, observe is what lets us pull the files from database
         Database.database().reference().child("users").observe(DataEventType.childAdded, with: { (snapshot) in
+            // Snapshot is all of the 'added childs'
             print(snapshot)
             
             let user = User()
@@ -35,6 +40,8 @@ class SelectUserViewController: UIViewController, UITableViewDelegate, UITableVi
             self.users.append(user)
             
             self.userList.reloadData()
+            
+            
         })
         
     }
@@ -52,6 +59,17 @@ class SelectUserViewController: UIViewController, UITableViewDelegate, UITableVi
         
         return cell
     }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let user = users[indexPath.row]
+        
+        let snap = ["from":user.email, "description":descrip, "imageURL":imageURL]
+        
+        Database.database().reference().child("users").child(user.uid).child("snaps").childByAutoId().setValue(snap)
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class PictureViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-
+    
     @IBOutlet weak var descriptionTF: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nextButton: UIButton!
@@ -23,7 +23,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         // imagePicker initialisation
         imagePicker.delegate = self
@@ -45,7 +45,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         // Dismiss image picker
         imagePicker.dismiss(animated: true, completion: nil)
     }
-
+    
     @IBAction func cameraTapped(_ sender: Any) {
         present(imagePicker, animated: true, completion: nil)
         imagePicker.sourceType = .savedPhotosAlbum
@@ -68,33 +68,36 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
                 print("ERROR \(String(describing: error))")
             } else {
                 
-                print(metadata?.downloadURL() as Any)
-                self.performSegue(withIdentifier: "selectUserSegue", sender: nil)
+                self.performSegue(withIdentifier: "selectUserSegue", sender: metadata?.downloadURL()!.absoluteString)
                 self.nextButton.isEnabled = true
             }
         }
-
+        
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           }
-
+        let nextVC = segue.destination as! SelectUserViewController
+        nextVC.imageURL = sender as! String
+        nextVC.descrip = descriptionTF.text!
+        
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

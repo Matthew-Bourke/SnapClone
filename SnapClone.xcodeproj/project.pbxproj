@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		065ED04DDA4B28148B7A1DE9 /* Pods_SnapCloneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 465D26078CA093FCB7ED7EB9 /* Pods_SnapCloneTests.framework */; };
 		3F5FA55EF8B3CE0FA1767B43 /* Pods_SnapCloneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87536C87215C216A37B9D2D3 /* Pods_SnapCloneUITests.framework */; };
+		C913CACD1F4A45A8000E6BC7 /* snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = C913CACC1F4A45A8000E6BC7 /* snap.swift */; };
 		C92A24971F49652D00914984 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92A24961F49652D00914984 /* AppDelegate.swift */; };
 		C92A24991F49652D00914984 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92A24981F49652D00914984 /* SignInViewController.swift */; };
 		C92A249C1F49652D00914984 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C92A249A1F49652D00914984 /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		87536C87215C216A37B9D2D3 /* Pods_SnapCloneUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnapCloneUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B27B27CEAC8C84EA6F82804 /* Pods-SnapCloneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapCloneUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnapCloneUITests/Pods-SnapCloneUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B0AC406EE6CFC2C51BD352C1 /* Pods-SnapCloneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapCloneUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnapCloneUITests/Pods-SnapCloneUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C913CACC1F4A45A8000E6BC7 /* snap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = snap.swift; sourceTree = "<group>"; };
 		C92A24931F49652D00914984 /* SnapClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C92A24961F49652D00914984 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C92A24981F49652D00914984 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				C92A24CC1F49A57B00914984 /* User.swift */,
+				C913CACC1F4A45A8000E6BC7 /* snap.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C913CACD1F4A45A8000E6BC7 /* snap.swift in Sources */,
 				C92A24991F49652D00914984 /* SignInViewController.swift in Sources */,
 				C92A24C91F49837600914984 /* PictureViewController.swift in Sources */,
 				C92A24CD1F49A57B00914984 /* User.swift in Sources */,
