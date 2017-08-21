@@ -41,12 +41,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7qI-Uk-JBy">
-                                <rect key="frame" x="153.5" y="271" width="68" height="35"/>
+                                <rect key="frame" x="148.5" y="271" width="78" height="35"/>
                                 <color key="backgroundColor" red="0.79124865281373502" green="0.25936373032006554" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <size key="titleShadowOffset" width="6" height="0.0"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="Turn Up">
+                                        <fragment content="LETS GO">
                                             <attributes>
                                                 <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <font key="NSFont" metaFont="system" size="19"/>
