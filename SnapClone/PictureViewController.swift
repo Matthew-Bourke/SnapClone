@@ -18,6 +18,8 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     // Runs function and lets output be saved in imagePicker variable
     var imagePicker = UIImagePickerController()
     
+    var uuid = NSUUID().uuidString
+    
     
     
     
@@ -48,7 +50,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBAction func cameraTapped(_ sender: Any) {
         present(imagePicker, animated: true, completion: nil)
-        imagePicker.sourceType = .savedPhotosAlbum
+        imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
     }
     
@@ -62,7 +64,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         let imageData = UIImageJPEGRepresentation(imageView.image!, 0.1)
         
         
-        imagesFolder.child("\(NSUUID().uuidString)").putData(imageData!, metadata: nil) { (metadata, error) in
+        imagesFolder.child("\(uuid)").putData(imageData!, metadata: nil) { (metadata, error) in
             print("We tried to upload")
             if error != nil {
                 print("ERROR \(String(describing: error))")
@@ -80,6 +82,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         let nextVC = segue.destination as! SelectUserViewController
         nextVC.imageURL = sender as! String
         nextVC.descrip = descriptionTF.text!
+        nextVC.uuid = uuid
         
     }
     
